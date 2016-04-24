@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="lib.index.cycholifemod.blocks.machine.bonfire.BonfireMachine"/>
+<fullyQualifiedTypeName name="net.minecraftforge.fml.common.event.FMLPostInitializationEvent"/>
+<fullyQualifiedTypeName name="net.minecraftforge.fml.common.FMLLog"/>
+<fullyQualifiedTypeName name="lib.index.cycholifemod.iCore.HandlerLog"/>
+<fullyQualifiedTypeName name="lib.index.cycholifemod.blocks.BlockCheck"/>
+<fullyQualifiedTypeName name="lib.index.cycholifemod.blocks.savagery.SavegeryItems"/>
+<fullyQualifiedTypeName name="net.minecraft.init.Blocks"/>
+</qualifiedTypeNameHistroy>

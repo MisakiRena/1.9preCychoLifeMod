@@ -1,0 +1,122 @@
+---- Minecraft Crash Report ----
+// But it works on my machine.
+
+Time: 2016/4/24 ¤U¤È 5:23
+Description: Unexpected error
+
+java.lang.Error: Unresolved compilation problem: 
+	The method getY() in the type Vec3i is not applicable for the arguments (int)
+
+	at lib.index.cycholifemod.blocks.BlockCheck.OverlappingCheck(BlockCheck.java:32)
+	at lib.index.cycholifemod.blocks.savagery.Blocklit_SurviveTorch.canPlaceBlockAt(Blocklit_SurviveTorch.java:38)
+	at net.minecraft.block.Block.canPlaceBlockOnSide(Block.java:744)
+	at net.minecraft.block.Block.canReplace(Block.java:730)
+	at net.minecraft.world.World.canBlockBePlaced(World.java:3357)
+	at net.minecraft.item.ItemBlock.canPlaceBlockOnSide(ItemBlock.java:131)
+	at net.minecraft.client.multiplayer.PlayerControllerMP.processRightClickBlock(PlayerControllerMP.java:447)
+	at net.minecraft.client.Minecraft.rightClickMouse(Minecraft.java:1597)
+	at net.minecraft.client.Minecraft.processKeyBinds(Minecraft.java:2268)
+	at net.minecraft.client.Minecraft.runTickKeyboard(Minecraft.java:2052)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1840)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1114)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:401)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97)
+	at GradleStart.main(GradleStart.java:26)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at lib.index.cycholifemod.blocks.BlockCheck.OverlappingCheck(BlockCheck.java:32)
+	at lib.index.cycholifemod.blocks.savagery.Blocklit_SurviveTorch.canPlaceBlockAt(Blocklit_SurviveTorch.java:38)
+	at net.minecraft.block.Block.canPlaceBlockOnSide(Block.java:744)
+	at net.minecraft.block.Block.canReplace(Block.java:730)
+	at net.minecraft.world.World.canBlockBePlaced(World.java:3357)
+	at net.minecraft.item.ItemBlock.canPlaceBlockOnSide(ItemBlock.java:131)
+	at net.minecraft.client.multiplayer.PlayerControllerMP.processRightClickBlock(PlayerControllerMP.java:447)
+	at net.minecraft.client.Minecraft.rightClickMouse(Minecraft.java:1597)
+	at net.minecraft.client.Minecraft.processKeyBinds(Minecraft.java:2268)
+	at net.minecraft.client.Minecraft.runTickKeyboard(Minecraft.java:2052)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['Player429'/105, l='MpServer', x=2001.54, y=4.00, z=229.33]]
+	Chunk stats: MultiplayerChunkCache: 575, 575
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (2016,4,235), Chunk: (at 0,0,11 in 126,14; contains blocks 2016,0,224 to 2031,255,239), Region: (3,0; contains chunks 96,0 to 127,31, blocks 1536,0,0 to 2047,255,511)
+	Level time: 2244 game time, 2244 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 42 total; [EntitySlime['Slime'/64, l='MpServer', x=2031.20, y=4.76, z=303.53], EntitySlime['Slime'/66, l='MpServer', x=2023.93, y=4.12, z=304.22], EntityCow['Cow'/69, l='MpServer', x=2041.89, y=4.00, z=157.05], EntitySlime['Slime'/70, l='MpServer', x=2048.60, y=5.35, z=149.18], EntitySlime['Slime'/72, l='MpServer', x=2032.85, y=4.04, z=169.58], EntitySlime['Slime'/73, l='MpServer', x=2044.95, y=4.12, z=179.82], EntitySlime['Slime'/74, l='MpServer', x=2034.55, y=4.00, z=247.43], EntitySlime['Slime'/75, l='MpServer', x=2047.78, y=5.00, z=270.36], EntitySlime['Slime'/76, l='MpServer', x=2042.89, y=4.30, z=275.28], EntitySlime['Slime'/77, l='MpServer', x=2037.22, y=4.00, z=296.71], EntitySlime['Slime'/79, l='MpServer', x=2059.43, y=4.06, z=154.90], EntitySlime['Slime'/80, l='MpServer', x=2059.37, y=4.08, z=151.82], EntitySlime['Slime'/81, l='MpServer', x=2066.48, y=4.00, z=152.97], EntitySlime['Slime'/82, l='MpServer', x=2059.66, y=4.00, z=175.48], EntitySlime['Slime'/83, l='MpServer', x=2064.66, y=4.11, z=195.29], EntitySlime['Slime'/84, l='MpServer', x=2063.64, y=4.30, z=254.29], EntitySlime['Slime'/85, l='MpServer', x=2061.04, y=4.00, z=263.74], EntitySlime['Slime'/86, l='MpServer', x=2046.65, y=4.67, z=262.08], EntitySheep['Sheep'/90, l='MpServer', x=2079.19, y=4.00, z=221.62], EntitySlime['Slime'/26, l='MpServer', x=1925.37, y=4.00, z=296.42], EntitySlime['Slime'/27, l='MpServer', x=1929.84, y=5.00, z=267.48], EntitySlime['Slime'/91, l='MpServer', x=2066.54, y=4.01, z=281.56], EntitySlime['Slime'/28, l='MpServer', x=1927.56, y=4.30, z=275.67], EntitySlime['Slime'/29, l='MpServer', x=1925.38, y=5.00, z=279.78], EntitySlime['Slime'/30, l='MpServer', x=1936.29, y=4.04, z=280.01], EntityHorse['Donkey'/31, l='MpServer', x=1947.50, y=4.00, z=153.50], EntitySlime['Slime'/32, l='MpServer', x=1945.96, y=4.50, z=263.94], EntitySlime['Slime'/35, l='MpServer', x=1959.22, y=4.04, z=206.42], EntitySlime['Slime'/36, l='MpServer', x=1964.58, y=4.00, z=214.36], EntityPig['Pig'/37, l='MpServer', x=1950.50, y=4.00, z=259.52], EntitySlime['Slime'/38, l='MpServer', x=1968.06, y=4.00, z=248.43], EntitySlime['Slime'/47, l='MpServer', x=1995.96, y=4.00, z=156.48], EntitySlime['Slime'/50, l='MpServer', x=1989.11, y=4.28, z=247.24], EntityPlayerSP['Player429'/105, l='MpServer', x=2001.54, y=4.00, z=229.33], EntitySlime['Slime'/52, l='MpServer', x=1997.82, y=4.00, z=158.52], EntityItem['item.item.seeds'/53, l='MpServer', x=2007.42, y=4.00, z=232.74], EntitySlime['Slime'/54, l='MpServer', x=2024.57, y=4.76, z=288.05], EntitySlime['Slime'/55, l='MpServer', x=2008.19, y=4.00, z=295.00], EntitySheep['Sheep'/61, l='MpServer', x=2022.20, y=4.00, z=193.39], EntitySlime['Slime'/62, l='MpServer', x=2031.11, y=4.00, z=266.46], EntitySlime['Slime'/63, l='MpServer', x=2015.55, y=4.50, z=292.78], EntitySlime['Slime'/7935, l='MpServer', x=2059.16, y=4.05, z=269.08]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:445)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2766)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:430)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97)
+	at GradleStart.main(GradleStart.java:26)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.9
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_66, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 665557936 bytes (634 MB) / 1038876672 bytes (990 MB) up to 1038876672 bytes (990 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.23 Powered by Forge 12.16.0.1865 4 mods loaded, 4 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	mcp{9.19} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{8.0.99.99} [Forge Mod Loader] (forgeSrc-1.9-12.16.0.1865-1.9.jar) 
+	UCHIJAAAA	Forge{12.16.0.1865} [Minecraft Forge] (forgeSrc-1.9-12.16.0.1865-1.9.jar) 
+	UCHIJAAAA	cycholifemod{0.1} [CychoLife] (bin) 
+	Loaded coremods (and transformers): 
+	GL info: ' Vendor: 'Intel' Version: '4.0.0 - Build 10.18.10.4276' Renderer: 'Intel(R) HD Graphics 4000'
+	Launched Version: 1.9
+	LWJGL: 2.9.4
+	OpenGL: Intel(R) HD Graphics 4000 GL version 4.0.0 - Build 10.18.10.4276, Intel
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: No
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	CPU: 4x Intel(R) Core(TM) i5-3210M CPU @ 2.50GHz

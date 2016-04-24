@@ -1,0 +1,6 @@
+package lib.index.cycholifemod.iCore;
+
+public interface NamedResource {
+
+	String getResourceName();
+}
