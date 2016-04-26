@@ -1,0 +1,7 @@
+package lib.index.cycholifemod.blocks.machine.bonfire;
+
+import net.minecraft.inventory.Container;
+
+public class ContainerBonfire extends Container{
+
+}

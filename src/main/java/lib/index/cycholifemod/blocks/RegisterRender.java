@@ -16,7 +16,6 @@ public class RegisterRender {
 	{
 		Item item = Item.getItemFromBlock(block);
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(CychoLifeMod.MODID+":"+item.getUnlocalizedName().substring(5),"inventory"));
-
 	}
 
 }

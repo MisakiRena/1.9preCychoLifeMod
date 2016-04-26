@@ -1,2 +1,16 @@
 1461504055354	Delete element
 1461504360243	Rename type 'BonfireBlocks'
+1461654044720	Rename field 'tileFurnace'
+1461654281266	Rename field 'furnaceBurnTime'
+1461654310970	Rename field 'furnaceCustomName'
+1461654332052	Rename field 'MachineCustomName'
+1461654342126	Rename field 'BonfireBurnTime'
+1461654372514	Rename field 'furnaceItemStacks'
+1461654466168	Rename field 'BonfireBurnTime'
+1461671776046	Rename type 'CycAnalyzeGuiHandler'
+1461672175389	Delete element
+1461672177346	Delete element
+1461680483658	Rename type 'Gui'
+1461687582074	Rename type 'TileEntityCrate'
+1461687590907	Rename type 'GuiHandlerCrate'
+1461687719794	Rename type 'ContainerCrate'

@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "cycholifemod:Bonfire_Machine" },
+        "facing=south": { "model": "cycholifemod:Bonfire_Machine", "y": 180 },
+        "facing=west":  { "model": "cycholifemod:Bonfire_Machine", "y": 270 },
+        "facing=east":  { "model": "cycholifemod:Bonfire_Machine", "y": 90 }
+    }
+}

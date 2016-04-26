@@ -1,0 +1,9 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "top": "cycholifemod:blocks/a",
+        "front": "cycholifemod:blocks/red",
+        "side": "cycholifemod:blocks/s"
+    }
+}
+

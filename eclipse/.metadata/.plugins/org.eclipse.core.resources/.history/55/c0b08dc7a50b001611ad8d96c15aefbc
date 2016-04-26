@@ -1,0 +1,32 @@
+package projecti.cycholifemod.PIBlock.CycMachine.MAnalyze;
+
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.world.World;
+
+import cpw.mods.fml.common.network.IGuiHandler;
+
+public class CycAnalyzeGuiHandler implements IGuiHandler {
+
+	public CycAnalyzeGuiHandler (){
+		
+	}
+	
+	@Override
+	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
+		if(ID == 0){
+			TileEntityCycAnalyze tileEntityFurnace = (TileEntityCycAnalyze) world.getTileEntity(x, y, z);
+			return new ContainerCycAnalyze(player.inventory, tileEntityFurnace);
+		}
+		return null;
+	}
+
+	@Override
+	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
+		if(ID == 0){
+			TileEntityCycAnalyze tileEntityTestContainer = (TileEntityCycAnalyze) world.getTileEntity(x, y, z);
+			return new GuiCycAnalyze(player.inventory, tileEntityTestContainer);
+		}
+		return null;
+	}
+
+}

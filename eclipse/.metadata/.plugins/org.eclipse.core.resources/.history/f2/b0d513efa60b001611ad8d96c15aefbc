@@ -1,0 +1,9 @@
+package lib.index.cycholifemod.blocks.machine.bonfire;
+
+import net.minecraft.client.gui.inventory.GuiContainer;
+
+public class GuiBonfire extends GuiContainer
+
+{
+
+}

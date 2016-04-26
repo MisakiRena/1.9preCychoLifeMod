@@ -1,0 +1,13 @@
+package lib.index.cycholifemod.blocks.machine.bonfire;
+
+import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
+
+@SideOnly(Side.CLIENT)
+public class GuiBonfire extends GuiContainer
+
+{
+
+}

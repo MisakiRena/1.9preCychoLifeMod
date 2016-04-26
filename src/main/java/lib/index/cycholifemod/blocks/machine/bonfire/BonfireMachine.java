@@ -2,8 +2,10 @@ package lib.index.cycholifemod.blocks.machine.bonfire;
 
 import java.util.Random;
 
+import lib.index.cycholifemod.CychoLifeMod;
 import lib.index.cycholifemod.blocks.BlockCheck;
 import lib.index.cycholifemod.blocks.RegisterRender;
+import lib.index.cycholifemod.iCore.GuiHandlerCreate;
 import lib.index.cycholifemod.iCore.ProjectICreativeTab;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
@@ -23,7 +25,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -41,25 +42,26 @@ public class BonfireMachine extends BlockContainer{
 	
     public static final PropertyDirection FACING = BlockHorizontal.FACING;
     private final boolean isBurning;
-    private static boolean keepInventory;	
+    private static boolean keepInventory;
 
-    public BonfireMachine(boolean isBurning)
+    public BonfireMachine(String unlocalizedname,boolean isBurning)
     {
         super(Material.rock);
-        this.setUnlocalizedName("Bonfire_Midi");
-        this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+        this.setUnlocalizedName(unlocalizedname);	
         this.isBurning = isBurning;
-        this.setCreativeTab(ProjectICreativeTab.tab_Savagery);
-    	//GameRegistry.registerBlock(this,this.getUnlocalizedName().substring(5));
-        //RegisterRender.init(this);
+        this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+    	GameRegistry.registerBlock(this,this.getUnlocalizedName().substring(5));
+        RegisterRender.init(this);
 
     }
 
+    @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(Blocks.coal_block);
+        return Item.getItemFromBlock(BonfireBlock.BonfireMachine);
     }
     
+    @Override
     public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
     {
         this.setDefaultFacing(worldIn, pos, state);
@@ -94,7 +96,10 @@ public class BonfireMachine extends BlockContainer{
 
             worldIn.setBlockState(pos, state.withProperty(FACING, enumfacing), 2);
         }
+ 
     }    
+    
+    @Override
     @SideOnly(Side.CLIENT)
     @SuppressWarnings("incomplete-switch")
     public void randomDisplayTick(IBlockState worldIn, World pos, BlockPos state, Random rand)
@@ -133,7 +138,9 @@ public class BonfireMachine extends BlockContainer{
             }
         }
     }
-
+    
+    
+    @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ)
     {
         if (worldIn.isRemote)
@@ -144,15 +151,18 @@ public class BonfireMachine extends BlockContainer{
         {
             TileEntity tileentity = worldIn.getTileEntity(pos);
 
-            if (tileentity instanceof TileEntityFurnace)
+            if (tileentity instanceof TileEntityBonfire)
             {
-                playerIn.displayGUIChest((TileEntityFurnace)tileentity);
+               // playerIn.displayGUIChest((TileEntityBonfire)tileentity);
+            	playerIn.openGui(CychoLifeMod.instance, GuiHandlerCreate.getGuiID(), worldIn, pos.getX(), pos.getY(), pos.getZ());
+                //CycTag1
                 playerIn.addStat(StatList.furnaceInteraction);
             }
 
             return true;
         }
     }
+    
 
     public static void setState(boolean active, World worldIn, BlockPos pos)
     {
@@ -160,15 +170,16 @@ public class BonfireMachine extends BlockContainer{
         TileEntity tileentity = worldIn.getTileEntity(pos);
         keepInventory = true;
 
+        //CycT2ag
         if (active)
         {
-            worldIn.setBlockState(pos, Blocks.lit_furnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
-            worldIn.setBlockState(pos, Blocks.lit_furnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, BonfireBlock.lit_BonfireMachine.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, BonfireBlock.lit_BonfireMachine.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
         }
         else
         {
-            worldIn.setBlockState(pos, Blocks.furnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
-            worldIn.setBlockState(pos, Blocks.furnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, BonfireBlock.BonfireMachine.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, BonfireBlock.BonfireMachine.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
         }
 
         keepInventory = false;
@@ -185,7 +196,7 @@ public class BonfireMachine extends BlockContainer{
      */
     public TileEntity createNewTileEntity(World worldIn, int meta)
     {
-        return new TileEntityFurnace();
+        return new TileEntityBonfire();
     }
 
     /**
@@ -208,9 +219,9 @@ public class BonfireMachine extends BlockContainer{
         {
             TileEntity tileentity = worldIn.getTileEntity(pos);
 
-            if (tileentity instanceof TileEntityFurnace)
+            if (tileentity instanceof TileEntityBonfire)
             {
-                ((TileEntityFurnace)tileentity).setCustomInventoryName(stack.getDisplayName());
+                ((TileEntityBonfire)tileentity).setCustomInventoryName(stack.getDisplayName());
             }
         }
     }
@@ -221,9 +232,9 @@ public class BonfireMachine extends BlockContainer{
         {
             TileEntity tileentity = worldIn.getTileEntity(pos);
 
-            if (tileentity instanceof TileEntityFurnace)
+            if (tileentity instanceof TileEntityBonfire)
             {
-                InventoryHelper.dropInventoryItems(worldIn, pos, (TileEntityFurnace)tileentity);
+                InventoryHelper.dropInventoryItems(worldIn, pos, (TileEntityBonfire)tileentity);
                 worldIn.updateComparatorOutputLevel(pos, this);
             }
         }
@@ -299,19 +310,7 @@ public class BonfireMachine extends BlockContainer{
     {
         return new BlockStateContainer(this, new IProperty[] {FACING});
     }
-    
+       
  
 }
-/*    
-	public static final Block Bonfire_Mid = new RegBonfireBlocks(Material.coral,"Bonfire_Mid") 
-	{
-		@Override
-		public boolean canPlaceBlockAt(World worldIn,BlockPos pos)
-		{
-			return BlockCheck.OverlappingCheck(worldIn, pos, this, 2, true);
-		}
-	};
-	
-	public static void init(){};
-}
-*/
+
