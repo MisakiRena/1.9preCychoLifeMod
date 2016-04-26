@@ -14,11 +14,18 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 
 public class GuiBonfire extends GuiContainer {
+	
+	
 	private static final ResourceLocation furnaceGuiTextures = new ResourceLocation(
-			CychoLifeMod.MODID+":textures/gui/furnace.png");
+			CychoLifeMod.MODID+":textures/gui/anvil.png");
 	/** The player inventory bound to this GUI. */
+	
 	private final InventoryPlayer playerInventory;
 	private IInventory tileFurnace;
+	
+	private static final int GUI_ID = 30;
+	public static int getGuiID() {return GUI_ID;}
+	
 
 	public GuiBonfire(InventoryPlayer playerInv, IInventory furnaceInv)
 	    {

@@ -5,7 +5,6 @@ import java.util.Random;
 import lib.index.cycholifemod.CychoLifeMod;
 import lib.index.cycholifemod.blocks.BlockCheck;
 import lib.index.cycholifemod.blocks.RegisterRender;
-import lib.index.cycholifemod.iCore.GuiHandlerCreate;
 import lib.index.cycholifemod.iCore.ProjectICreativeTab;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
@@ -154,8 +153,9 @@ public class BonfireMachine extends BlockContainer{
             if (tileentity instanceof TileEntityBonfire)
             {
                // playerIn.displayGUIChest((TileEntityBonfire)tileentity);
-            	playerIn.openGui(CychoLifeMod.instance, GuiHandlerCreate.getGuiID(), worldIn, pos.getX(), pos.getY(), pos.getZ());
-                //CycTag1
+            	//playerIn.openGui(CychoLifeMod.instance, GuiHandlerCreate.getGuiID(), worldIn, pos.getX(), pos.getY(), pos.getZ());
+            	playerIn.openGui(CychoLifeMod.instance, GuiBonfire.getGuiID(), worldIn, pos.getX(), pos.getY(), pos.getZ());
+            	//CycTag1
                 playerIn.addStat(StatList.furnaceInteraction);
             }
 
