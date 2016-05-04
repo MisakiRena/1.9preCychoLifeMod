@@ -4,9 +4,7 @@ import lib.index.cycholifemod.CychoLifeMod;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.ContainerFurnace;
 import net.minecraft.inventory.IInventory;
-import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -16,22 +14,20 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class GuiBonfire extends GuiContainer {
 	
 	
-	private static final ResourceLocation furnaceGuiTextures = new ResourceLocation(
-			CychoLifeMod.MODID+":textures/gui/anvil.png");
+	private static final ResourceLocation bonfireGuiTextures = new ResourceLocation(
+			CychoLifeMod.MODID+":textures/gui/container/bonfire.png");
 	/** The player inventory bound to this GUI. */
 	
 	private final InventoryPlayer playerInventory;
-	private IInventory tileFurnace;
+	private IInventory tileBonfire;
 	
-	private static final int GUI_ID = 30;
-	public static int getGuiID() {return GUI_ID;}
+	public static int getGuiID() {return 1;}
 	
-
 	public GuiBonfire(InventoryPlayer playerInv, IInventory furnaceInv)
 	    {
 	        super(new ContainerBonfire(playerInv, furnaceInv));
 	        this.playerInventory = playerInv;
-	        this.tileFurnace = furnaceInv;
+	        this.tileBonfire = furnaceInv;
 	    }
 
 	/**
@@ -44,10 +40,11 @@ public class GuiBonfire extends GuiContainer {
 	 *            Mouse y coordinate
 	 */
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-		String s = this.tileFurnace.getDisplayName().getUnformattedText();
-		this.fontRendererObj.drawString(s, this.xSize / 2 - this.fontRendererObj.getStringWidth(s) / 2, 6, 4210752);
-		this.fontRendererObj.drawString(this.playerInventory.getDisplayName().getUnformattedText(), 8,
-				this.ySize - 96 + 2, 4210752);
+		String s = this.tileBonfire.getDisplayName().getUnformattedText();
+		this.fontRendererObj.drawString
+		(s, this.xSize / 2 - this.fontRendererObj.getStringWidth(s) / 2, 6, 4210752);
+        this.fontRendererObj.drawString
+        (this.playerInventory.getDisplayName().getUnformattedText(), 8, this.ySize - 96 + 2, 4210752);
 	}
 
 	/**
@@ -63,33 +60,36 @@ public class GuiBonfire extends GuiContainer {
 	 */
 	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-		this.mc.getTextureManager().bindTexture(furnaceGuiTextures);
+		this.mc.getTextureManager().bindTexture(bonfireGuiTextures);
 		int i = (this.width - this.xSize) / 2;
+		
 		int j = (this.height - this.ySize) / 2;
 		this.drawTexturedModalRect(i, j, 0, 0, this.xSize, this.ySize);
 
-		if (TileEntityFurnace.isBurning(this.tileFurnace)) {
+		if (TileEntityBonfire.isBurning(this.tileBonfire)) {
 			int k = this.getBurnLeftScaled(13);
-			this.drawTexturedModalRect(i + 56, j + 36 + 12 - k, 176, 12 - k, 14, k + 1);
-		}
-
+			this.drawTexturedModalRect(i + 81, j + 32 + 12 - k, 176, 12 - k, 14, k + 1);
+		}  
+		
 		int l = this.getCookProgressScaled(24);
-		this.drawTexturedModalRect(i + 79, j + 34, 176, 14, l + 1, 16);
+		this.drawTexturedModalRect(i + 109, j + 54, 176, 14, l + 1, 16);
 	}
 
+	
 	private int getCookProgressScaled(int pixels) {
-		int i = this.tileFurnace.getField(2);
-		int j = this.tileFurnace.getField(3);
+		int i = this.tileBonfire.getField(2);
+		int j = this.tileBonfire.getField(3);
 		return j != 0 && i != 0 ? i * pixels / j : 0;
 	}
+	
 
 	private int getBurnLeftScaled(int pixels) {
-		int i = this.tileFurnace.getField(1);
+		int i = this.tileBonfire.getField(1);
 
 		if (i == 0) {
 			i = 200;
 		}
 
-		return this.tileFurnace.getField(0) * pixels / i;
+		return this.tileBonfire.getField(0) * pixels / i;
 	}
 }

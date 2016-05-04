@@ -153,9 +153,7 @@ public class BonfireMachine extends BlockContainer{
             if (tileentity instanceof TileEntityBonfire)
             {
                // playerIn.displayGUIChest((TileEntityBonfire)tileentity);
-            	//playerIn.openGui(CychoLifeMod.instance, GuiHandlerCreate.getGuiID(), worldIn, pos.getX(), pos.getY(), pos.getZ());
-            	playerIn.openGui(CychoLifeMod.instance, GuiBonfire.getGuiID(), worldIn, pos.getX(), pos.getY(), pos.getZ());
-            	//CycTag1
+            	playerIn.openGui(CychoLifeMod.instance,GuiBonfire.getGuiID(), worldIn, pos.getX(), pos.getY(), pos.getZ());
                 playerIn.addStat(StatList.furnaceInteraction);
             }
 

@@ -1,7 +1,6 @@
 package lib.index.cycholifemod.iCore;
 
 import lib.index.cycholifemod.CychoLifeMod;
-import lib.index.cycholifemod.blocks.machine.bonfire.GuiHandlerBonfire;
 import lib.index.cycholifemod.blocks.machine.bonfire.TileEntityBonfire;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -21,7 +20,7 @@ public class ServerProxy {
 	}
 	
 	public void registerNetworkStuff(){
-		NetworkRegistry.INSTANCE.registerGuiHandler(CychoLifeMod.instance, new GuiHandlerBonfire());
+		NetworkRegistry.INSTANCE.registerGuiHandler(CychoLifeMod.instance, new CycGuiHandler());
 	}
 	
 	public void registerTileEntities(){

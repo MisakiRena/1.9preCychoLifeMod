@@ -1,0 +1,78 @@
+---- Minecraft Crash Report ----
+// Don't do that.
+
+Time: 2016/5/3 下午 1:52
+Description: Ticking block entity
+
+java.lang.NullPointerException: Ticking block entity
+	at lib.index.cycholifemod.blocks.machine.bonfire.TileEntityBonfire.update(TileEntityBonfire.java:218)
+	at net.minecraft.world.World.updateEntities(World.java:1936)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:637)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:779)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:683)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:155)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:532)
+	at java.lang.Thread.run(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at lib.index.cycholifemod.blocks.machine.bonfire.TileEntityBonfire.update(TileEntityBonfire.java:218)
+
+-- Block entity being ticked --
+Details:
+	Name: TileEntityBonfire // lib.index.cycholifemod.blocks.machine.bonfire.TileEntityBonfire
+	Block type: ID #214 (tile.Bonfire_Machine // lib.index.cycholifemod.blocks.machine.bonfire.BonfireMachine)
+	Block data value: 3 / 0x3 / 0b0011
+	Block location: World: (-353,4,-704), Chunk: (at 15,0,0 in -23,-44; contains blocks -368,0,-704 to -353,255,-689), Region: (-1,-2; contains chunks -32,-64 to -1,-33, blocks -512,0,-1024 to -1,255,-513)
+	Actual block type: ID #215 (tile.lit_Bonfire_Machine // lib.index.cycholifemod.blocks.machine.bonfire.BonfireMachine)
+	Actual block data value: 3 / 0x3 / 0b0011
+Stacktrace:
+	at net.minecraft.world.World.updateEntities(World.java:1936)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:637)
+
+-- Affected level --
+Details:
+	Level name: 新的世界
+	All players: 1 total; [EntityPlayerMP['Player465'/121, l='新的世界', x=-352.79, y=4.00, z=-702.46]]
+	Chunk stats: ServerChunkCache: 787 Drop: 0
+	Level seed: -2461478277959658909
+	Level generator: ID 01 - flat, ver 0. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (-168,4,-543), Chunk: (at 8,0,1 in -11,-34; contains blocks -176,0,-544 to -161,255,-529), Region: (-1,-2; contains chunks -32,-64 to -1,-33, blocks -512,0,-1024 to -1,255,-513)
+	Level time: 31311 game time, 13131 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 9012 (now: true), thunder time: 75360 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:779)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:683)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:155)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:532)
+	at java.lang.Thread.run(Unknown Source)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.9
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_66, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 542501560 bytes (517 MB) / 1038876672 bytes (990 MB) up to 1038876672 bytes (990 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.23 Powered by Forge 12.16.0.1865 4 mods loaded, 4 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	mcp{9.19} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{8.0.99.99} [Forge Mod Loader] (forgeSrc-1.9-12.16.0.1865-1.9.jar) 
+	UCHIJAAAA	Forge{12.16.0.1865} [Minecraft Forge] (forgeSrc-1.9-12.16.0.1865-1.9.jar) 
+	UCHIJAAAA	cycholifemod{0.1} [CychoLife] (bin) 
+	Loaded coremods (and transformers): 
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	Profiler Position: N/A (disabled)
+	Player Count: 1 / 8; [EntityPlayerMP['Player465'/121, l='新的世界', x=-352.79, y=4.00, z=-702.46]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'

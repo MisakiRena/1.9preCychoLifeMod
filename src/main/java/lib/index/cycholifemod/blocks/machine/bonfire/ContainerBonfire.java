@@ -1,5 +1,6 @@
 package lib.index.cycholifemod.blocks.machine.bonfire;
 
+import lib.index.cycholifemod.blocks.machine.lib.CycFuel;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -21,14 +22,15 @@ public class ContainerBonfire extends Container{
     private int bonfireBurnTime;
     private int currentItemBurnTime;
     
-    
-
     public ContainerBonfire(InventoryPlayer playerInventory, IInventory BonfireInventory)
     {
         this.tileBonfire = BonfireInventory;
-        this.addSlotToContainer(new Slot(BonfireInventory, 0, 56, 17));
-        this.addSlotToContainer(new SlotFurnaceFuel(BonfireInventory, 1, 56, 53));
-        this.addSlotToContainer(new SlotFurnaceOutput(playerInventory.player, BonfireInventory, 2, 116, 35));
+        this.addSlotToContainer(new Slot(BonfireInventory, 0, 26, 32));
+        this.addSlotToContainer(new Slot(BonfireInventory, 1, 54, 32));
+        this.addSlotToContainer(new SlotFurnaceFuel(BonfireInventory, 2, 81, 53));        
+        this.addSlotToContainer(new SlotFurnaceOutput(playerInventory.player, BonfireInventory, 3, 113, 32));
+        this.addSlotToContainer(new SlotFurnaceOutput(playerInventory.player, BonfireInventory, 4, 146, 19));
+        this.addSlotToContainer(new SlotFurnaceOutput(playerInventory.player, BonfireInventory, 5, 146, 45));
 
         for (int i = 0; i < 3; ++i)
         {
@@ -42,7 +44,9 @@ public class ContainerBonfire extends Container{
         {
             this.addSlotToContainer(new Slot(playerInventory, k, 8 + k * 18, 142));
         }
+
     }
+
 
     public void onCraftGuiOpened(ICrafting listener)
     {

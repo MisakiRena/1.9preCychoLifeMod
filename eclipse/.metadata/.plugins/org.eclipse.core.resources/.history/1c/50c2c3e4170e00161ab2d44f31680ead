@@ -1,0 +1,19 @@
+package lib.index.cycholifemod.iCore;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+
+public class ProjectICreativeTab {
+	
+	//public static final CreativeTabs tab_ProjectI	= new CreativeTabs("ProjectI_Core"){@Override public Item getTabIconItem(){return Item.getItemFromBlock(Blocks.beacon);} };
+	//public static final CreativeTabs tab_CityRoad	= new CreativeTabs("CityRoad") 	   {@Override public Item getTabIconItem(){return Items.brick;} };
+	public static final CreativeTabs tab_Savagery		= new CreativeTabs("SavageryAge")  		{@Override public Item getTabIconItem(){return Item.getItemFromBlock(Blocks.furnace);} };
+	public static final CreativeTabs tab_RockIgneous	= new CreativeTabs("IgneousRocks")  	{@Override public Item getTabIconItem(){return Item.getItemFromBlock(Blocks.furnace);} };
+	public static final CreativeTabs tab_RockSedimentary= new CreativeTabs("SedimentaryRocks")  {@Override public Item getTabIconItem(){return Item.getItemFromBlock(Blocks.furnace);} };
+	public static final CreativeTabs tab_RockMetamorphic= new CreativeTabs("MetamorphicRocks")  {@Override public Item getTabIconItem(){return Item.getItemFromBlock(Blocks.furnace);} };
+	//public static final CreativeTabs tab_Savagery	= new CreativeTabs("SavageryAge")  {@Override public Item getTabIconItem(){return Item.getItemFromBlock(Blocks.furnace);} };
+	
+	public static void initialiseTabs(){}
+}

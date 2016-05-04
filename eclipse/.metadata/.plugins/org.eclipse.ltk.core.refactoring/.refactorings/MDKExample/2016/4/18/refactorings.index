@@ -17,3 +17,20 @@
 1461691448090	Delete element
 1461691450074	Delete element
 1461691451023	Delete element
+1461781523290	Copy package
+1461781735582	Rename package 'lib.index.cycholifemod.blocks.machine.bonfire.copy'
+1461781762980	Rename type 'BonfireMachine'
+1461781776452	Delete element
+1461781778780	Delete element
+1461781798991	Delete element
+1461781900684	Delete element
+1461781915785	Delete element
+1461782038598	Rename type 'GuiBonfire'
+1461784426253	Rename field 'tileFurnace'
+1461820146125	Move compilation unit
+1461820152769	Delete element
+1461820156206	Delete element
+1461821883965	Rename type 'GuiHandlerBonfire'
+1461821899528	Rename type 'GuiHandler'
+1461925750069	Move compilation unit
+1461925763752	Move compilation unit

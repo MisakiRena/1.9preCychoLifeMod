@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="BonfireMachine" key="selection"/>
+		<item value="getCookProgressScaled" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="BonfireMachine"/>
-			<item value="GUI"/>
-			<item value="FUI"/>
-			<item value="theTexture"/>
-			<item value="getGuiID"/>
-			<item value="tile"/>
-			<item value="fc"/>
-			<item value="minecaft:"/>
+			<item value="getCookProgressScaled"/>
+			<item value="getBurnLeftScaled"/>
+			<item value="machineCustomName"/>
+			<item value="flag"/>
+			<item value="contai"/>
+			<item value="gui"/>
+			<item value="fui"/>
+			<item value="Update"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>

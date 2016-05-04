@@ -1,7 +1,0 @@
-package lib.index.cycholifemod.blocks.machine.bonfire;
-
-import net.minecraft.tileentity.TileEntityFurnace;
-
-public class TileEntityBonfire extends TileEntityFurnace {
-
-}
